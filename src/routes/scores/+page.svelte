@@ -9,7 +9,7 @@
 	async function loadMore() {
 		try {
 			const colorsCol = collection(db, 'colors');
-			const q = query(colorsCol, orderBy('score', order), limit(500), where('score', '!=', 0));
+			const q = query(colorsCol, orderBy('score', order), limit(4096), where('score', '!=', 0));
 			const querySnapshot = await getDocs(q);
 
 			let docs = [];
